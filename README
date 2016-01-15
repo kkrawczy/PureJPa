@@ -1,0 +1,11 @@
+Pure JPA Project using only Java SE.
+Application will try to connect to H2 database, create db structure and create one user entity.
+We need to start H2 database before. To do it we can use H2 server that will be in maven dependencies:
+cd ~/.m2/repository/com/h2database/h2/1.4.190
+java -cp h2-1.4.190.jar org.h2.tools.Server
+After that web console will be opened and we can start the database. We need to start Generic H2 (Server) with the values defined in the persistence.xml.
+Then we can start the application:
+mvn clean install
+Test will be run and data will be added to the database.
+
+To start db automatically in memory we need to change jdbc.url to "jdbc:h2:mem/test"
